@@ -8,14 +8,16 @@ import HomeScreen from './screens/HomeScreen';
 import AboutScreen from './screens/about'; 
 import ContactScreen from './screens/contact'; 
 import Navbar from './componente/Navbar';  
+import { View } from 'react-native-web';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <View style={{flex:1}}>
     <Provider store={store}> 
       <NavigationContainer>
-        <Navbar /> 
+        <View><Navbar /> </View>
         <Stack.Navigator
           initialRouteName="Home"
           screenOptions={{
@@ -30,5 +32,6 @@ export default function App() {
       </NavigationContainer>
       <StatusBar style="light" /> 
     </Provider> 
+    </View>
   );
 }
